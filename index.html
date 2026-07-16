@@ -4,27 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francesca Cortona - Artista & Pittrice</title>
-<!-- Collegamento ai loghi dei Social (Font Awesome) -->
+<!-- Collegamento ai loghi dei Social -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:Georgia, serif; background:#090510; color:#f8e8c0; line-height:1.7; }
 .container{ width:90%; max-width:1200px; margin:auto; }
 
-/* HEADER & NAV */
-header{ position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:18px 5vw; background:rgba(9,5,16,.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(230,195,106,.25); }
-header .brand{ font-size:1.1rem; letter-spacing:.14em; color:#e6c36a; text-decoration:none; text-transform:uppercase; }
-header nav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; }
+/* HEADER & NAV - Ottimizzato per Desktop e Mobile */
+header{ 
+  position:sticky; 
+  top:0; 
+  z-index:100; /* Sta sopra a tutto */
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding:18px 5vw; 
+  background:rgba(9,5,16,.95); 
+  -webkit-backdrop-filter:blur(10px); /* Sfocatura per iPhone */
+  backdrop-filter:blur(10px); 
+  border-bottom:1px solid rgba(230,195,106,.25); 
+}
+header .brand{ font-size:1.1rem; letter-spacing:.14em; color:#e6c36a; text-decoration:none; text-transform:uppercase; z-index: 110; }
+
+/* Menù di navigazione (Desktop) */
+header nav ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; }
 header nav a{ color:#f8e8c0; text-decoration:none; opacity:.75; transition:.3s; padding-bottom:4px; border-bottom:1px solid transparent; }
 header nav a:hover{ opacity:1; color:#e6c36a; }
 header nav a.active{ opacity:1; color:#e6c36a; border-bottom-color:#e6c36a; }
+
+/* Gruppo di destra (Lingua + Hamburger) */
+.header-right{ display:flex; align-items:center; gap:20px; z-index: 110; }
 
 .lang-toggle{ display:flex; gap:6px; align-items:center; }
 .lang-toggle button{ background:transparent; border:1px solid rgba(230,195,106,.4); color:#f8e8c0; font-family:Georgia,serif; font-size:.72rem; letter-spacing:.1em; padding:5px 10px; border-radius:20px; cursor:pointer; transition:.3s; opacity:.7; }
 .lang-toggle button.active{ background:#e6c36a; color:#1b0d04; border-color:#e6c36a; opacity:1; font-weight:bold; }
 
+/* Pulsante Hamburger (Nascosto su Computer) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #e6c36a;
+  transition: all 0.3s ease;
+}
+
 /* HERO SECTION */
-.hero{ position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px 20px; background: radial-gradient(circle, rgba(29,16,46,0.8) 0%, rgba(9,5,16,1) 100%); }
+.hero{ position:relative; min-height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 20px; background: radial-gradient(circle, rgba(29,16,46,0.8) 0%, rgba(9,5,16,1) 100%); }
 .hero-content{ max-width:800px; z-index:10; }
 .hero h1{ font-size:3rem; color:#e6c36a; margin-bottom:15px; text-shadow: 0 0 15px rgba(230,195,106,0.3); }
 .hero p{ font-size:1.2rem; opacity:.9; font-style:italic; }
@@ -34,37 +70,123 @@ header nav a.active{ opacity:1; color:#e6c36a; border-bottom-color:#e6c36a; }
 .bio-grid{ display:flex; flex-direction:row; align-items:center; gap:50px; }
 .bio-text{ flex:1; }
 .bio-image{ flex:1; display:flex; justify-content:center; }
-.bio-image img{ max-width:100%; max-height:450px; border-radius:15px; border:2px solid #e6c36a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
+.bio-image img{ width:100%; height:auto; max-height:450px; border-radius:15px; border:2px solid #e6c36a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
 
-/* SEZIONE SOCIAL NEL FOOTER */
+/* FOOTER & SOCIAL */
 footer{ background:#030106; text-align:center; padding:40px 20px; color:#d5b15c; margin-top:60px; border-top:1px solid rgba(230,195,106,.2); }
 .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
 .social-link { color: #e6c36a; font-size: 1.8rem; transition: transform 0.3s, color 0.3s; text-decoration: none; }
 .social-link:hover { color: #f8e8c0; transform: translateY(-4px); }
 
+
+/* ========================================================
+   REGOLE SPECIALI PER SMARTPHONE (COMPRESI TUTTI GLI IPHONE)
+   ======================================================== */
 @media (max-width: 768px) {
-  .bio-grid { flex-direction: column; text-align: center; }
-  .hero h1 { font-size: 2.2rem; }
+  /* Mostra il pulsante Hamburger */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Animazione da Hamburger a "X" quando è aperto */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Trasforma il menù in una tendina che scivola da destra */
+  header nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Nasconde il menù fuori dallo schermo a destra */
+    width: 75%; /* Copre il 75% della larghezza dello schermo */
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(9, 5, 16, 0.98);
+    border-left: 1px solid rgba(230,195,106,.2);
+    padding: 100px 30px 40px 30px;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+  }
+
+  /* Quando il menù ha la classe "open", scivola dentro lo schermo */
+  header nav.open {
+    right: 0;
+  }
+
+  /* Allinea i link in verticale nel menù mobile */
+  header nav ul {
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1.1rem; /* Scritte grandi e facili da cliccare */
+  }
+
+  header nav a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(230,195,106,.05);
+  }
+  
+  header nav a.active {
+    border-bottom-color: #e6c36a;
+  }
+
+  /* Ridimensionamenti per il resto della pagina su Mobile */
+  .hero {
+    padding: 40px 15px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .bio-grid {
+    flex-direction: column; /* Foto sotto al testo */
+    text-align: center;
+    gap: 35px;
+  }
+  .bio-image img {
+    max-width: 100%;
+    max-height: 350px;
+  }
 }
 </style>
 </head>
 <body>
 
 <header>
-<a class="brand" href="index.html">Francesca Cortona</a>
-<nav aria-label="Navigazione principale">
-<ul>
-<li><a class="active" href="index.html">Home</a></li>
-<li><a href="arcani.html">Arcani</a></li>
-<li><a href="mostre.html">Mostre & Critica</a></li>
-<li><a href="chakra.html">7 Chakra</a></li>
-<li><a href="contatti.html">Contatti</a></li>
-</ul>
-</nav>
-<div class="lang-toggle">
-<button type="button" data-lang="it" class="active">IT</button>
-<button type="button" data-lang="en">EN</button>
-</div>
+  <a class="brand" href="index.html">Francesca Cortona</a>
+  
+  <nav aria-label="Navigazione principale">
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="arcani.html">Arcani</a></li>
+      <li><a href="mostre.html">Mostre & Critica</a></li>
+      <li><a href="chakra.html">7 Chakra</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button type="button" data-lang="it" class="active">IT</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    
+    <!-- Pulsante a tre linee dorate (visibile solo su mobile) -->
+    <button class="menu-toggle" aria-label="Apri menù">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
 <section class="hero">
@@ -85,35 +207,23 @@ footer{ background:#030106; text-align:center; padding:40px 20px; color:#d5b15c;
       </div>
     </div>
     <div class="bio-image">
-      <!-- La tua bellissima foto modificata -->
-      <img src="images/francesca.jpg" alt="Francesca Cortona al lavoro">
+      <img src="images/foto.jpg" alt="Francesca Cortona al lavoro">
     </div>
   </div>
 </section>
 
 <footer>
   <p>Francesca Cortona © 2026 | Art & Spirit</p>
-  
   <div class="social-links">
-    <!-- Link Instagram (sostituisci il link con il tuo profilo reale) -->
-    <a href="https://www.instagram.com/francesca_cortona_art" target="_blank" class="social-link" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    
-    <!-- Link Facebook (sostituisci il link con la tua pagina reale) -->
-    <a href="https://www.facebook.com/francescacortona" target="_blank" class="social-link" aria-label="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    
-    <!-- La tua email professionale -->
-    <a href="mailto:cortonaitalianpainter@gmail.com" class="social-link" aria-label="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
+    <a href="https://www.instagram.com/francesca_cortona_art" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/francescacortona" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="mailto:cortonaitalianpainter@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
   </div>
 </footer>
 
 <script>
 (function(){
+  // 1. GESTIONE LINGUE (IT / EN)
   var els = document.querySelectorAll('[data-en]');
   els.forEach(function(el){ el.dataset.it = el.innerHTML; });
   function setLang(lang){
@@ -128,6 +238,26 @@ footer{ background:#030106; text-align:center; padding:40px 20px; color:#d5b15c;
   var saved;
   try{ saved = localStorage.getItem('cortona-lang'); }catch(e){}
   if(saved === 'en'){ setLang('en'); }
+
+  // 2. GESTIONE MENU HAMBURGER (APRI / CHIUDI)
+  var menuToggle = document.querySelector('.menu-toggle');
+  var nav = document.querySelector('header nav');
+  
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('open');
+      nav.classList.toggle('open');
+    });
+
+    // Chiude il menù se l'utente clicca su una voce di menù
+    var navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        menuToggle.classList.remove('open');
+        nav.classList.remove('open');
+      });
+    });
+  }
 })();
 </script>
 </body>
