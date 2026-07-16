@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostre e Critica - Francesca Cortona</title>
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:Georgia, serif; background:#090510; color:#f8e8c0; line-height:1.7; }
+.container{ width:90%; max-width:1200px; margin:auto; }
+
+/* HEADER & NAV */
+header{ position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:18px 5vw; background:rgba(9,5,16,.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(230,195,106,.25); }
+header .brand{ font-size:1.1rem; letter-spacing:.14em; color:#e6c36a; text-decoration:none; text-transform:uppercase; }
+header nav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; }
+header nav a{ color:#f8e8c0; text-decoration:none; opacity:.75; transition:.3s; padding-bottom:4px; border-bottom:1px solid transparent; }
+header nav a:hover{ opacity:1; color:#e6c36a; }
+header nav a.active{ opacity:1; color:#e6c36a; border-bottom-color:#e6c36a; }
+
+.lang-toggle{ display:flex; gap:6px; align-items:center; }
+.lang-toggle button{ background:transparent; border:1px solid rgba(230,195,106,.4); color:#f8e8c0; font-family:Georgia,serif; font-size:.72rem; letter-spacing:.1em; padding:5px 10px; border-radius:20px; cursor:pointer; transition:.3s; opacity:.7; }
+.lang-toggle button.active{ background:#e6c36a; color:#1b0d04; border-color:#e6c36a; opacity:1; font-weight:bold; }
+
+section{ padding:80px 0; }
+.title{ text-align:center; font-size:2.5rem; color:#e6c36a; margin-bottom:40px; text-shadow: 0 0 15px rgba(230,195,106,.4); }
+
+.highlight-box{ background:linear-gradient(135deg, #1d102e, #0e0517); border:2px solid #e6c36a; border-radius:20px; padding:40px; margin-bottom:60px; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+.highlight-box h3{ font-size:1.8rem; color:#e6c36a; margin-bottom:15px; }
+.highlight-box p { font-size:1.15rem; margin-bottom:20px; }
+.btn-link{ display:inline-block; padding:12px 30px; border-radius:30px; background:#e6c36a; color:#1b0d04; font-weight:bold; text-decoration:none; transition:.3s; }
+.btn-link:hover{ transform:scale(1.05); box-shadow:0 0 20px #e6c36a; }
+
+.grid-two{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.card{ background:#10081a; border:1px solid rgba(230,195,106,.2); border-radius:15px; padding:30px; }
+.card h3{ color:#e6c36a; font-size:1.4rem; margin-bottom:15px; border-bottom:1px solid rgba(230,195,106,.2); padding-bottom:10px; }
+.card ul{ list-style:none; }
+.card li{ margin-bottom:15px; font-size:1rem; }
+.card li strong{ color:#fff; }
+
+footer{ background:#030106; text-align:center; padding:30px; color:#d5b15c; margin-top:60px; }
+@media(max-width:768px){ .grid-two{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+<a class="brand" href="index.html">Francesca Cortona</a>
+<nav aria-label="Navigazione principale">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="arcani.html">Arcani</a></li>
+<li><a class="active" href="mostre.html">Mostre & Critica</a></li>
+<li><a href="chakra.html">7 Chakra</a></li>
+<li><a href="contatti.html">Contatti</a></li>
+</ul>
+</nav>
+<div class="lang-toggle">
+<button type="button" data-lang="it" class="active">IT</button>
+<button type="button" data-lang="en">EN</button>
+</div>
+</header>
+
+<section class="container">
+  <h2 class="title" data-en="Exhibitions & Press">Mostre, Critica e Stampa</h2>
+
+  <!-- ARTICOLO IN EVIDENZA -->
+  <div class="highlight-box">
+    <span style="color:#e6c36a; font-size:0.9rem; text-transform:uppercase; letter-spacing:2px;" data-en="Featured Press">Articolo in Evidenza</span>
+    <h3 data-en="Francesca Cortona – Visual Citations (Art Now)">Francesca Cortona – Citazioni Visive</h3>
+    <p data-en="A dedicated editorial feature exploring the use of pigments, colors and shapes in Francesca's works, emphasizing art as a healing medium.">
+      Un focus esclusivo curato ed editoriale che esplora la complessa rete di simboli, la materia cromatica e l'energia evocativa presenti nelle opere pittoriche di Francesca Cortona.
+    </p>
+    <a href="https://www.art-now.it/2023/05/12/francesca-cortona-citazioni-visive/" target="_blank" class="btn-link" data-en="Read Article on Art Now">Leggi l'Articolo su Art Now</a>
+  </div>
+
+  <div class="grid-two">
+    <div class="card">
+      <h3 data-en="Exhibition Path">Percorso Espositivo</h3>
+      <ul>
+        <li><strong data-en="Publications">Pubblicazioni:</strong> Edita da Artnow editoriale, CAM (Catalogo dell’Arte Moderna n. 58), e l’Atlante d’Arte Contemporanea.</li>
+        <li><strong>2021</strong> - <span data-en="Awarded by Vittorio Sgarbi, criticism and appreciation of the works published in the Porto Franco catalog by ArtNow (Serradifalco editions).">Premiata da Vittorio Sgarbi con critica e stima delle opere pubblicata sul catalogo Porto Franco di ArtNow (Serradifalco edizioni).</span></li>
+        <li><strong>2015</strong> - <span data-en="Starts artistic path exhibiting with the cultural association 'Insieme per l'Arte' in Rome.">Inizia la via artistica ed espositiva con l’associazione culturale ‘Insieme per l’Arte’ a Roma.</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 data-en="Critics & Wix Press">Critica e Archivio Web</h3>
+      <p style="font-style:italic; margin-bottom:15px; font-size:0.95rem;" data-en="&quot;Cortona's art is distinguished by the use of luminescent pigments which are a tool that generates Light in the dark.&quot;">
+        "L’Arte di Cortona si contraddistingue nell’uso dei pigmenti luminescenti che sono uno strumento che genera la Luce al buio."
+      </p>
+      <ul>
+        <li><a href="https://cortonafrancesca.wixsite.com/my-site-3/press" target="_blank" style="color:#e6c36a; text-decoration:none;" data-en="➔ Complete Wix Press Archive">➔ Archivio Stampa Completo (Wix)</a></li>
+        <li><a href="https://cortonafrancesca.wixsite.com/my-site-3/critics" target="_blank" style="color:#e6c36a; text-decoration:none;" data-en="➔ Artist Critical Reviews">➔ Leggi i Testi dei Critici d’Arte</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+<p>Francesca Cortona © 2026 | Mostre & Riconoscimenti</p>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-en]');
+  els.forEach(function(el){ el.dataset.it = el.innerHTML; });
+  function setLang(lang){
+    els.forEach(function(el){ el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.it; });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    try{ localStorage.setItem('cortona-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+  var saved;
+  try{ saved = localStorage.getItem('cortona-lang'); }catch(e){}
+  if(saved === 'en'){ setLang('en'); }
+})();
+</script>
+</body>
+</html>

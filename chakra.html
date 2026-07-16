@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Chakra Collection - Francesca Cortona</title>
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:Georgia, serif; background:#090510; color:#f8e8c0; line-height:1.7; }
+.container{ width:90%; max-width:1200px; margin:auto; }
+
+/* HEADER & NAV */
+header{ position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:18px 5vw; background:rgba(9,5,16,.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(230,195,106,.25); }
+header .brand{ font-size:1.1rem; letter-spacing:.14em; color:#e6c36a; text-decoration:none; text-transform:uppercase; }
+header nav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; }
+header nav a{ color:#f8e8c0; text-decoration:none; opacity:.75; transition:.3s; padding-bottom:4px; border-bottom:1px solid transparent; }
+header nav a:hover{ opacity:1; color:#e6c36a; }
+header nav a.active{ opacity:1; color:#e6c36a; border-bottom-color:#e6c36a; }
+
+.lang-toggle{ display:flex; gap:6px; align-items:center; }
+.lang-toggle button{ background:transparent; border:1px solid rgba(230,195,106,.4); color:#f8e8c0; font-family:Georgia,serif; font-size:.72rem; letter-spacing:.1em; padding:5px 10px; border-radius:20px; cursor:pointer; transition:.3s; opacity:.7; }
+.lang-toggle button.active{ background:#e6c36a; color:#1b0d04; border-color:#e6c36a; opacity:1; font-weight:bold; }
+
+section{ padding:80px 0; }
+.title{ text-align:center; font-size:2.5rem; color:#e6c36a; margin-bottom:20px; text-shadow: 0 0 15px rgba(230,195,106,.4); }
+.subtitle{ text-align:center; max-width:800px; margin:0 auto 50px auto; font-size:1.1rem; opacity:0.8; }
+
+.chakra-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+.chakra-card{ background:#120921; border-radius:20px; border:1px solid rgba(230,195,106,.2); padding:35px 25px; text-align:center; transition:.3s; }
+.chakra-card:hover{ border-color:#e6c36a; transform:translateY(-5px); box-shadow:0 8px 25px rgba(230,195,106,0.15); }
+
+/* SFOCATURE E GLOBI DI LUCE ENERGETICI (CSS ORBS) */
+.chakra-orb {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 30px auto;
+  animation: pulseFloat 4s ease-in-out infinite;
+  box-shadow: 0 0 35px var(--orb-color);
+  opacity: 0.9;
+}
+
+@keyframes pulseFloat {
+  0%, 100% { transform: translateY(0) scale(1); filter: brightness(1); }
+  50% { transform: translateY(-10px) scale(1.05); filter: brightness(1.2); }
+}
+
+/* Colori specifici per ogni centro energetico */
+.orb-red { --orb-color: rgba(255, 50, 50, 0.7); background: radial-gradient(circle, #ff4d4d 10%, #800000 80%); }
+.orb-orange { --orb-color: rgba(255, 120, 30, 0.7); background: radial-gradient(circle, #ff8533 10%, #993d00 80%); }
+.orb-yellow { --orb-color: rgba(255, 215, 0, 0.6); background: radial-gradient(circle, #ffd700 10%, #806600 80%); }
+.orb-green { --orb-color: rgba(50, 205, 50, 0.7); background: radial-gradient(circle, #32cd32 10%, #004d00 80%); }
+.orb-lightblue { --orb-color: rgba(0, 191, 255, 0.7); background: radial-gradient(circle, #00bfff 10%, #004080 80%); }
+.orb-indigo { --orb-color: rgba(75, 0, 130, 0.8); background: radial-gradient(circle, #4b0082 10%, #1a0033 80%); }
+.orb-violet { --orb-color: rgba(186, 85, 211, 0.7); background: radial-gradient(circle, #ba55d3 10%, #4d004d 80%); }
+
+.chakra-card h3{ color:#e6c36a; margin-bottom:10px; font-size:1.4rem; }
+
+.opensea-box{ text-align:center; background:linear-gradient(135deg, #1d102e, #0e0517); border:2px solid #e6c36a; border-radius:20px; padding:40px; margin-top:60px; }
+.btn-link{ display:inline-block; padding:12px 30px; border-radius:30px; background:#e6c36a; color:#1b0d04; font-weight:bold; text-decoration:none; transition:.3s; margin-top:20px; }
+.btn-link:hover{ transform:scale(1.05); box-shadow:0 0 20px #e6c36a; }
+
+footer{ background:#030106; text-align:center; padding:30px; color:#d5b15c; margin-top:60px; }
+</style>
+</head>
+<body>
+
+<header>
+<a class="brand" href="index.html">Francesca Cortona</a>
+<nav aria-label="Navigazione principale">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="arcani.html">Arcani</a></li>
+<li><a href="mostre.html">Mostre & Critica</a></li>
+<li><a class="active" href="chakra.html">7 Chakra</a></li>
+<li><a href="contatti.html">Contatti</a></li>
+</ul>
+</nav>
+<div class="lang-toggle">
+<button type="button" data-lang="it" class="active">IT</button>
+<button type="button" data-lang="en">EN</button>
+</div>
+</header>
+
+<section class="container">
+  <h2 class="title" data-en="7 Chakra Collection">7 Chakra Collection</h2>
+  <p class="subtitle" data-en="In 2021, Francesca entered the world of Crypto Art by creating the '7CHAKRA COLLECTION' NFT project on the Ethereum blockchain. A profound and innovative project born with an humanitarian purpose, celebrating inner harmony.">
+    Nel 2021 entra nel mondo della Crypto Arte, creando la collezione ‘7CHAKRA COLLECTION’ NFT, su blockchain Ethereum. Un progetto speciale a scopo Umanitario che unisce l'espressione artistica della pittura tradizionale alle nuove frontiere tecnologiche.
+  </p>
+
+  <div class="chakra-grid">
+    <!-- Chakra 1 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-red"></div>
+      <h3>1. Muladhara</h3>
+      <p data-en="Root Chakra - Grounding and stability.">Chakra della Radice - Connessione e stabilità terrena.</p>
+    </div>
+    <!-- Chakra 2 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-orange"></div>
+      <h3>2. Svadhisthana</h3>
+      <p data-en="Sacral Chakra - Creativity and fluid motion.">Chakra Sacrale - Flusso e potenziale creativo.</p>
+    </div>
+    <!-- Chakra 3 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-yellow"></div>
+      <h3>3. Manipura</h3>
+      <p data-en="Solar Plexus Chakra - Personal power and inner fire.">Plesso Solare - Forza interiore e luce radiante.</p>
+    </div>
+    <!-- Chakra 4 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-green"></div>
+      <h3>4. Anahata</h3>
+      <p data-en="Heart Chakra - Universal love and compassion.">Chakra del Cuore - Amore incondizionato ed empatia.</p>
+    </div>
+    <!-- Chakra 5 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-lightblue"></div>
+      <h3>5. Vishuddha</h3>
+      <p data-en="Throat Chakra - Expression and absolute truth.">Chakra della Gola - Verità e comunicazione autentica.</p>
+    </div>
+    <!-- Chakra 6 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-indigo"></div>
+      <h3>6. Ajna</h3>
+      <p data-en="Third Eye Chakra - Pure intuition and vision.">Terzo Occhio - Intuizione, visione e discernimento.</p>
+    </div>
+    <!-- Chakra 7 -->
+    <div class="chakra-card">
+      <div class="chakra-orb orb-violet"></div>
+      <h3>7. Sahasrara</h3>
+      <p data-en="Crown Chakra - Oneness and spiritual link.">Chakra della Corona - Unione con l'Infinito e lo Spirito.</p>
+    </div>
+  </div>
+
+  <div class="opensea-box">
+    <h3 data-en="Etherium Blockchain Collection">Disponibile su Opensea</h3>
+    <p data-en="Each artwork is registered and tradeable as a digital collective NFT on Ethereum blockchain. Part of the proceeds supports humanitarian initiatives.">
+      Le opere d'arte digitali NFT della collezione sono ospitate su Ethereum e acquistabili direttamente. Un progetto nato per unire l'Arte, lo Spirito e l'aiuto concreto.
+    </p>
+    <a href="https://opensea.io/collection/cortonaitalianpainter" target="_blank" class="btn-link" data-en="Buy on OpenSea Marketplace">Visita il Progetto su OpenSea</a>
+  </div>
+</section>
+
+<footer>
+<p>Francesca Cortona © 2026 | Crypto Art & Humanitarian Project</p>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-en]');
+  els.forEach(function(el){ el.dataset.it = el.innerHTML; });
+  function setLang(lang){
+    els.forEach(function(el){ el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.it; });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    try{ localStorage.setItem('cortona-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+  });
+  var saved;
+  try{ saved = localStorage.getItem('cortona-lang'); }catch(e){}
+  if(saved === 'en'){ setLang('en'); }
+})();
+</script>
+</body>
+</html>
