@@ -1,188 +1,47 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Francesca Cortona - Artista & Pittrice</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{ font-family:Georgia, serif; background:#090510; color:#f8e8c0; line-height:1.7; }
 .container{ width:90%; max-width:1200px; margin:auto; }
 
 /* HEADER & NAV */
-header{ 
-  position:sticky; 
-  top:0; 
-  z-index:100; 
-  display:flex; 
-  align-items:center; 
-  justify-content:space-between; 
-  padding:18px 5vw; 
-  background:rgba(9,5,16,.95); 
-  -webkit-backdrop-filter:blur(10px); 
-  backdrop-filter:blur(10px); 
-  border-bottom:1px solid rgba(230,195,106,.25); 
-}
-header .brand{ font-size:1.1rem; letter-spacing:.14em; color:#e6c36a; text-decoration:none; text-transform:uppercase; z-index: 110; }
-
-header nav ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; }
+header{ position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:18px 5vw; background:rgba(9,5,16,.95); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid rgba(230,195,106,.25); }
+header .brand{ font-size:1.1rem; letter-spacing:.14rem; color:#e6c36a; text-decoration:none; text-transform:uppercase; }
+header nav ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; font-size:.8rem; letter-spacing:.1rem; }
 header nav a{ color:#f8e8c0; text-decoration:none; opacity:.75; transition:.3s; padding-bottom:4px; border-bottom:1px solid transparent; }
 header nav a:hover{ opacity:1; color:#e6c36a; }
 header nav a.active{ opacity:1; color:#e6c36a; border-bottom-color:#e6c36a; }
-
 .header-right{ display:flex; align-items:center; gap:20px; z-index: 110; }
 .lang-toggle{ display:flex; gap:6px; align-items:center; }
-.lang-toggle button{ background:transparent; border:1px solid rgba(230,195,106,.4); color:#f8e8c0; font-family:Georgia,serif; font-size:.72rem; letter-spacing:.1em; padding:5px 10px; border-radius:20px; cursor:pointer; transition:.3s; opacity:.7; }
+.lang-toggle button{ background:transparent; border:1px solid rgba(230,195,106,.4); color:#f8e8c0; font-family:inherit; padding:4px 8px; cursor:pointer; }
 .lang-toggle button.active{ background:#e6c36a; color:#1b0d04; border-color:#e6c36a; opacity:1; font-weight:bold; }
 
-.menu-toggle { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; background: transparent; border: none; cursor: pointer; padding: 0; }
-.menu-toggle span { width: 100%; height: 2px; background-color: #e6c36a; transition: all 0.3s ease; }
-
-/* HERO SECTION - Usa la tua immagine hero.jpg sciolta */
-.hero{ 
-  position:relative; 
-  min-height:60vh; 
-  display:flex; 
-  align-items:center; 
-  justify-content:center; 
-  text-align:center; 
-  padding:80px 20px; 
-  background: linear-gradient(rgba(9,5,16,0.7), rgba(9,5,16,0.85)), url('hero.jpg') no-repeat center center/cover;
+/* NUOVI STILI PER LA HOME PAGE */
+section { padding: 60px 0; }
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, rgba(27,13,4,0.2) 0%, rgba(9,5,16,1) 100%);
+    padding: 0 20px;
 }
-.hero-content{ max-width:800px; z-index:10; }
-.hero h1{ font-size:3rem; color:#e6c36a; margin-bottom:15px; text-shadow: 0 0 15px rgba(230,195,106,0.3); }
-.hero p{ font-size:1.2rem; opacity:.9; font-style:italic; }
+.hero-content h1 { font-size: 3rem; color: #e6c36a; margin-bottom: 20px; letter-spacing: 0.1rem; }
+.hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
 
-/* BIOGRAFIA SECTION */
-.bio-section{ padding:80px 0; border-top:1px solid rgba(230,195,106,.1); }
-.bio-grid{ display:flex; flex-direction:row; align-items:center; gap:50px; }
-.bio-text{ flex:1; }
-.bio-image{ flex:1; display:flex; justify-content:center; }
-/* Collegamento alla cartella image singolare */
-.bio-image img{ width:100%; height:auto; max-height:450px; border-radius:15px; border:2px solid #e6c36a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; }
+.bio-section { padding-top: 40px; }
+.bio-grid { display: flex; flex-direction: column; gap: 40px; }
+@media (min-width: 768px) {
+    .bio-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+}
+.bio-text h2 { color: #e6c36a; margin-bottom: 20px; font-size: 2.2rem; }
+.bio-text p { margin-bottom: 15px; font-size: 1.1rem; opacity: 0.85; }
 
-/* FOOTER */
-footer{ background:#030106; text-align:center; padding:40px 20px; color:#d5b15c; margin-top:60px; border-top:1px solid rgba(230,195,106,.2); }
-.social-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-.social-link { color: #e6c36a; font-size: 1.8rem; transition: transform 0.3s, color 0.3s; text-decoration: none; }
-.social-link:hover { color: #f8e8c0; transform: translateY(-4px); }
-
-/* RESPONSIVE MOBILE */
-@media (max-width: 768px) {
-  .menu-toggle { display: flex; }
-  .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-toggle.open span:nth-child(2) { opacity: 0; }
-  .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-  header nav {
-    position: fixed;
-    top: 0;
-    right: -100%; 
-    width: 75%; 
-    max-width: 300px;
-    height: 100vh;
-    background: rgba(9, 5, 16, 0.98);
-    border-left: 1px solid rgba(230,195,106,.2);
-    padding: 100px 30px 40px 30px;
-    transition: right 0.3s ease-in-out;
-  }
-  header nav.open { right: 0; }
-  header nav ul { flex-direction: column; gap: 25px; font-size: 1.1rem; }
-  header nav a { display: block; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(230,195,106,.05); }
-  header nav a.active { border-bottom-color: #e6c36a; }
-
-  .hero h1 { font-size: 2.2rem; }
-  .bio-grid { flex-direction: column; text-align: center; gap: 35px; }
-  .bio-image img { max-width: 100%; max-height: 350px; }
+/* Regola d'oro per le immagini della Home */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 </style>
-</head>
-<body>
-
-<header>
-  <a class="brand" href="index.html">Francesca Cortona</a>
-  <nav aria-label="Navigazione principale">
-    <ul>
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="arcani.html">Arcani</a></li>
-      <li><a href="mostre.html">Mostre & Critica</a></li>
-      <li><a href="chakra.html">7 Chakra</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-  </nav>
-  <div class="header-right">
-    <div class="lang-toggle">
-      <button type="button" data-lang="it" class="active">IT</button>
-      <button type="button" data-lang="en">EN</button>
-    </div>
-    <button class="menu-toggle" aria-label="Apri menù">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1 data-en="Francesca Cortona">Francesca Cortona</h1>
-    <p data-en="Art, Symbolism and Spiritual Research through Painting">Arte, Simbolismo e Ricerca Spirituale attraverso la Pittura</p>
-  </div>
-</section>
-
-<section class="container bio-section">
-  <div class="bio-grid">
-    <div class="bio-text">
-      <h2 style="color:#e6c36a; margin-bottom:20px;" data-en="Biography">Biografia</h2>
-      <div data-en="Francesca Cortona is an Italian painter and artist whose work explores the deep connections between traditional oil painting, symbolism, and spiritual evolution.">
-        <p>Francesca Cortona è una pittrice e artista italiana la cui opera esplora le profonde connessioni tra la pittura tradizionale, il simbolismo e l'evoluzione spirituale. La sua ricerca si concentra sul dare forma visibile alle energie invisibili, creando portali visivi che parlano direttamente all'anima.</p>
-        <br>
-        <p>Attraverso i suoi dipinti e progetti speciali, come la collezione dedicata ai 7 Chakra e il mazzo dipinto a mano dei 22 Arcani Maggiori, Francesca unisce l'antica maestria dell'arte figurativa con un percorso contemporaneo e profondo di consapevolezza interiore.</p>
-      </div>
-    </div>
-    <div class="bio-image">
-      <!-- Percorso corretto alla cartella image singolare -->
-      <img src="image/foto.jpg" alt="Francesca Cortona al lavoro">
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>Francesca Cortona © 2026 | Art & Spirit</p>
-  <div class="social-links">
-    <a href="https://www.instagram.com/francesca_cortona_art" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/francescacortona" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:cortonaitalianpainter@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var els = document.querySelectorAll('[data-en]');
-  els.forEach(function(el){ el.dataset.it = el.innerHTML; });
-  function setLang(lang){
-    els.forEach(function(el){ el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.it; });
-    document.documentElement.lang = lang;
-    document.querySelectorAll('.lang-toggle button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
-    try{ localStorage.setItem('cortona-lang', lang); }catch(e){}
-  }
-  document.querySelectorAll('.lang-toggle button').forEach(function(b){
-    b.addEventListener('click', function(){ setLang(b.dataset.lang); });
-  });
-  var saved;
-  try{ saved = localStorage.getItem('cortona-lang'); }catch(e){}
-  if(saved === 'en'){ setLang('en'); }
-
-  var menuToggle = document.querySelector('.menu-toggle');
-  var nav = document.querySelector('header nav');
-  if (menuToggle && nav) {
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('open');
-      nav.classList.toggle('open');
-    });
-  }
-})();
-</script>
-</body>
-</html>
