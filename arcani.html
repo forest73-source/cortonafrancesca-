@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcani - Edizione Limitata | Francesca Cortona</title>
+    <title>Arcani - Francesca Cortona</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --accent-color: #d4af37; /* Dettagli in oro */
-            --card-bg: #1a1a1a;
+            --bg-color: #0b0b0b;
+            --text-color: #e5e5e5;
+            --accent-color: #c5a059; /* Tonalità oro artistico */
+            --card-bg: #121212;
+            --border-color: #222222;
         }
 
         body {
@@ -21,136 +22,199 @@
             padding: 0;
         }
 
-        .container {
-            max-width: 750px;
+        /* Navigazione / Header */
+        nav {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        header {
+        nav .logo {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sezione Principale / Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            letter-spacing: 6px;
+            margin: 0 0 20px 0;
+            font-weight: 300;
+            color: #ffffff;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: #888888;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Sezione della presentazione del Cofanetto */
+        .sezione-cofanetto {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-cofanetto {
             text-align: center;
             margin-bottom: 50px;
         }
 
-        .badge {
+        .badge-edizione {
             display: inline-block;
             background-color: var(--accent-color);
-            color: #000;
+            color: #000000;
             font-weight: bold;
             text-transform: uppercase;
-            padding: 6px 16px;
+            padding: 5px 14px;
             font-size: 0.75rem;
             letter-spacing: 2px;
             border-radius: 20px;
             margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 2.8rem;
-            letter-spacing: 4px;
-            margin: 0 0 10px 0;
+        .intro-cofanetto h2 {
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            margin: 0 0 20px 0;
             color: #ffffff;
-            font-weight: 300;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #a0a0a0;
-            margin: 0;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #cccccc;
-            font-weight: 300;
-        }
-
-        .details-card {
-            background-color: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .details-card h2 {
-            color: var(--accent-color);
-            margin-top: 0;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
             font-weight: 400;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 15px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0 0 0;
+        .intro-cofanetto p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: #b0b0b0;
+            font-size: 1.15rem;
+            line-height: 1.7;
         }
 
-        li {
-            padding: 12px 0;
-            border-bottom: 1px solid #222;
-            display: flex;
-            align-items: center;
-            font-size: 1.05rem;
-        }
-
-        li:last-child {
-            border-bottom: none;
-        }
-
-        li::before {
-            content: "✦";
-            color: var(--accent-color);
-            margin-right: 15px;
-            font-size: 0.9rem;
-        }
-
-        .cta-container {
-            text-align: center;
+        /* La Griglia con i 4 Riquadri */
+        .griglia-riquadri {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
             margin-top: 50px;
         }
 
-        .btn-purchase {
+        .riquadro {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .riquadro:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .riquadro h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .riquadro ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .riquadro li {
+            padding: 10px 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #cccccc;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .riquadro li::before {
+            content: "✦";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 9px;
+            font-size: 0.75rem;
+        }
+
+        /* Pulsante di Azione / CTA */
+        .cta-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .btn-azione {
             display: inline-block;
             background-color: transparent;
             color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 16px 45px;
-            font-size: 1.1rem;
+            border: 1px solid var(--accent-color);
+            padding: 18px 48px;
+            font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            border-radius: 4px;
+            border-radius: 2px;
         }
 
-        .btn-purchase:hover {
+        .btn-azione:hover {
             background-color: var(--accent-color);
             color: #000000;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
+        /* Piè di pagina */
         footer {
             text-align: center;
-            margin-top: 80px;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
-            color: #555555;
+            color: #666666;
+            margin-top: 40px;
         }
 
         footer a {
-            color: #888888;
+            color: #999999;
             text-decoration: none;
-            transition: color 0.2s;
             display: inline-block;
             margin-top: 15px;
+            transition: color 0.2s;
         }
 
         footer a:hover {
@@ -160,42 +224,77 @@
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="badge">Edizione Limitata</div>
+    <!-- Navigazione Superiore -->
+    <nav>
+        <div class="logo">Francesca Cortona</div>
+        <a href="index.html">&larr; Home</a>
+    </nav>
+
+    <!-- Contenuto Principale -->
+    <main>
+        <section class="hero">
             <h1>ARCANI</h1>
-            <p class="subtitle">Solo 33 cofanetti numerati</p>
-        </header>
+            <p class="tagline">Edizione d'Arte in Tiratura Limitata</p>
+        </section>
 
-        <main>
-            <p class="intro-text">
-                Ogni esemplare è preparato, numerato e firmato personalmente da Francesca Cortona, rendendo ogni cofanetto un'opera unica da collezione. Un'edizione pensata per accompagnare il tuo percorso attraverso i 22 Arcani.
-            </p>
+        <!-- Sezione Dettagli Cofanetto con i 4 Riquadri -->
+        <section class="sezione-cofanetto">
+            <div class="intro-cofanetto">
+                <span class="badge-edizione">Edizione Limitata[cite: 1]</span>
+                <h2>Il Cofanetto degli Arcani</h2>
+                <p>
+                    Ogni esemplare è preparato, numerato e firmato personalmente da Francesca Cortona, rendendo ogni cofanetto un'opera unica da collezione[cite: 1]. Un'edizione pensata per accompagnare il tuo corso attraverso i 22[cite: 1].
+                </p>
+            </div>
 
-            <section class="details-card">
-                <h2>Il cofanetto include:</h2>
-                <ul>
-                    <li>Cofanetto da collezione</li>
-                    <li>Mazzo completo con 22 Arcani illustrati e firmati con la sigla FC</li>
-                    <li>Volume illustrato ARCANI</li>
-                    <li>Accesso alle composizioni sonore originali dell'opera</li>
-                    <li>Certificato di Autenticità firmato a mano</li>
-                    <li>Una stampa Fine Art dell'Arcano a scelta, firmata e datata dall'artista</li>
-                    <li>Spedizione gratuita</li>
-                </ul>
-            </section>
+            <div class="griglia-riquadri">
+                <!-- Riquadro 1 -->
+                <div class="riquadro">
+                    <h3>L'Opera Civica</h3>
+                    <ul>
+                        <li>Cofanetto da collezione[cite: 1]</li>
+                        <li>Mazzo completo con 22 Arcani illustrati e firmati con la sigla FC[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <!-- Riquadro 2 -->
+                <div class="riquadro">
+                    <h3>Elementi Narrativi</h3>
+                    <ul>
+                        <li>Volume illustrato ARCANI[cite: 1]</li>
+                        <li>Accesso alle composizioni sonore originali dell'opera[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <!-- Riquadro 3 -->
+                <div class="riquadro">
+                    <h3>Certificazioni</h3>
+                    <ul>
+                        <li>Certificato di Autenticità a mano[cite: 1]</li>
+                        <li>Una stampa Fine Art Arcano a scelta, firmata e datata dall'artista[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <!-- Riquadro 4 -->
+                <div class="riquadro">
+                    <h3>Esclusività</h3>
+                    <ul>
+                        <li>Solo 33 cofanetti numerati[cite: 1]</li>
+                        <li>Spedizione gratuita[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="cta-container">
-                <!-- Sostituisci il '#' con il link reale di pagamento o contatto -->
-                <a href="#" class="btn-purchase">Acquista il Cofanetto</a>
+                <a href="#" class="btn-azione">Richiedi un Esemplare</a>
             </div>
-        </main>
+        </section>
+    </main>
 
-        <footer>
-            <p>&copy; 2026 Francesca Cortona. Tutti i diritti riservati.</p>
-            <p><a href="index.html">&larr; Torna alla Home</a></p>
-        </footer>
-    </div>
+    <!-- Piè di pagina -->
+    <footer>
+        <p>&copy; 2026 Francesca Cortona. Tutti i diritti riservati.</p>
+    </footer>
 
 </body>
 </html>
