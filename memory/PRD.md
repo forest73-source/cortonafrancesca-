@@ -35,3 +35,9 @@ Sito d'arte per l'artista Cortona Francesca (esistente su Cloudflare Pages). Ric
 - Immagini convertite in WebP (41MB→12MB) + meta OpenGraph/Twitter con og-image.jpg.
 - Cloudflare Pages: ricordare Root directory = `frontend`, build `yarn build`, output `build`.
 - Testing agent: iteration_2 100% pass.
+
+## Aggiornamenti multilingua (Giugno 2026)
+- Sito MULTILINGUA a 5 lingue: IT, EN, ES, FR, ZH. Selettore lingua (globo) in navbar desktop+mobile, persistenza via localStorage 'lang' (default 'it').
+- Architettura i18n: `src/i18n/t.js` (UI/prose 5 lingue), `src/i18n/LanguageContext.jsx` (provider + useLang), helper `pick(v,lang)` in `src/data/extra.js`; `content.json` con subtitle/year/desc/caption come oggetti {it,en,es,fr,zh}. Didascalie tradotte via dizionario termini.
+- Cofanetto Arcani aggiornato dal documento utente: Edizione Standard 57 €, Edizione Limitata 290 € (solo 33) con feature esatte (cofanetto, certificato firmato, stampa Fine Art, ecc.).
+- Testing agent: iteration_3 100% pass. Fix a11y: document.documentElement.lang su mount.
