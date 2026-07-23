@@ -14,7 +14,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-[100vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/media/arcani/portrait.jpg" alt="Cortona Francesca"
+          <img src="/media/arcani/portrait.webp" alt="Cortona Francesca"
                className="w-full h-full object-cover object-center opacity-40" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(11,10,15,0.96) 0%, rgba(11,10,15,0.7) 45%, rgba(11,10,15,0.5) 100%)" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 2%, transparent 40%)" }} />
@@ -73,7 +73,7 @@ export default function Home() {
                 L'Arte e la<br />sua Essenza
               </h2>
               <div className="mt-8 relative overflow-hidden border" style={{ borderColor: "var(--line)" }}>
-                <img src="/media/arcani/portrait.jpg" alt="Cortona Francesca ritratto"
+                <img src="/media/arcani/portrait.webp" alt="Cortona Francesca ritratto"
                      className="w-full object-cover animate-float" style={{ maxHeight: 520 }} />
               </div>
             </Reveal>
