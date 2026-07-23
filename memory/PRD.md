@@ -26,3 +26,12 @@ Sito d'arte per l'artista Cortona Francesca (esistente su Cloudflare Pages). Ric
 - P1: Aggiungere schede dettaglio per singolo Arcano (nome + significato).
 - P2: SEO/OpenGraph meta + sitemap, ottimizzazione peso immagini (webp).
 - P2: Deploy: `yarn build` → cartella `build` su Cloudflare Pages.
+
+## Aggiornamenti (Giugno 2026)
+- Ripristinate 2 sezioni mancanti: **Mostre & Critica** (/mostre) e **7 Chakra** (/7-chakra).
+- Inserito il **CV** nella biografia (Home) in modo elegante: timeline Studi & Formazione, Lingue, Interessi + pulsante download PDF (`public/cv-francesca-cortona.pdf`).
+- Su richiesta utente: NESSUN link di reindirizzamento esterno (contenuti inline). Link OpenSea in Home sostituito con link interno a /7-chakra.
+- Navbar e Footer aggiornati con le nuove voci. Dati centralizzati in `src/data/extra.js`.
+- Immagini convertite in WebP (41MB→12MB) + meta OpenGraph/Twitter con og-image.jpg.
+- Cloudflare Pages: ricordare Root directory = `frontend`, build `yarn build`, output `build`.
+- Testing agent: iteration_2 100% pass.
