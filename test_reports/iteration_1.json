@@ -1,0 +1,22 @@
+{
+  "summary": "Frontend-only e2e test of static React art site 'Cortona Francesca'. Tested Home, Navbar Opere dropdown, /arcani (title/subtitle/prices/gallery + lightbox open/next/prev/close), /opere (select trigger+list, 6 serie cards), all 6 collection pages (/opere/<slug>), /contatti social links, and footer social links. All required data-testids present, all images load (naturalWidth>0) across Home (5), Arcani (22), and every collection page (frammenti 12, innocence-1 18, innocence-2 27, innocence-3 11, maestri-di-marmo 4, dopo-di-noi 9). Lightbox opens on click, prev/next/close and Escape all work. Social hrefs correct in both contatti and footer with target=_blank. No console/page errors observed.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Footer social <a> tags do not include target=_blank / rel=noopener (contatti links do). Minor UX/security nit—consider adding for consistency.",
+    "content.json-driven; consider adding alt text i18n fallback per image (currently descriptive but generic)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Static React SPA, no backend. All key data-testids implemented: nav-opere, opere-dropdown, dropdown-<slug>, arcani-gallery, arcani-gallery-item-N, lightbox + lightbox-next/prev/close, opere-select-trigger, opere-select-list, serie-card-<slug>, serie-description, serie-gallery, serie-gallery-item-N, contact-facebook/instagram/whatsapp/email, footer-facebook/instagram. Images served from /media/opere/<slug>/N.jpg and /media/arcani/arcano-N.jpg — all load. Facebook URL: facebook.com/CortonaFrancescaArcani; Instagram: instagram.com/francescacortona.",
+  "rca of the issue": "N/A - no defects found"
+}
