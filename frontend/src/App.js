@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import Arcani from "@/pages/Arcani";
@@ -25,6 +26,7 @@ function App() {
     <BrowserRouter>
       <LanguageProvider>
         <ScrollToTop />
+        <Seo />
         <div className="relative" style={{ zIndex: 2 }}>
           <Navbar />
           <main data-testid="app-main">
