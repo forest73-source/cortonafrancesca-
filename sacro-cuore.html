@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sacro Cuore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#1b1712; }
+  #poster {
+    width:2000px;
+    min-height:1414px;
+    margin:0 auto;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(255,251,242,0.92), rgba(240,232,216,0.9)),
+      #ece3d1;
+    position:relative;
+    padding:110px 120px;
+    color:#2a2622;
+    font-family:'EB Garamond', serif;
+    overflow:hidden;
+    display:flex;
+    gap:110px;
+    align-items:center;
+  }
+  #poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    opacity:0.45; pointer-events:none; z-index:0;
+  }
+  #poster::after{
+    content:"";
+    position:absolute; inset:30px;
+    border:1px solid rgba(60,45,30,0.3);
+    pointer-events:none; z-index:1;
+  }
+
+  /* ---- LEFT: framed painting ---- */
+  .art-col{ position:relative; z-index:3; flex:0 0 760px; display:flex; justify-content:center; }
+  .frame{
+    position:relative;
+    padding:34px;
+    background:
+      linear-gradient(135deg,#8a6a3a 0%,#c9a15c 18%,#7c5a2e 40%,#dcb978 60%,#8a6a3a 82%,#6f5227 100%);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.25) inset,
+      0 -2px 0 rgba(0,0,0,0.35) inset,
+      0 40px 80px rgba(30,20,10,0.55),
+      0 15px 30px rgba(30,20,10,0.4);
+    border-radius:3px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute; inset:14px;
+    border:2px solid rgba(60,40,15,0.55);
+    box-shadow:0 0 8px rgba(0,0,0,0.3) inset;
+    pointer-events:none;
+  }
+  .mat{
+    background:#f6f1e6;
+    padding:40px;
+    box-shadow:0 0 18px rgba(0,0,0,0.35) inset;
+  }
+  .mat img{ display:block; width:100%; box-shadow:0 4px 14px rgba(0,0,0,0.3); }
+  .plate{
+    margin-top:26px;
+    text-align:center;
+    background:linear-gradient(180deg,#d8b876,#a9863f);
+    color:#3a2c12;
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-size:19px;
+    font-weight:600;
+    padding:10px 22px;
+    border:1px solid rgba(60,40,15,0.5);
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+    display:inline-block;
+  }
+  .plate-wrap{ text-align:center; }
+
+  /* ---- RIGHT: text ---- */
+  .text-col{ position:relative; z-index:3; flex:1; }
+  .kicker{
+    letter-spacing:0.5em;
+    text-transform:uppercase;
+    font-size:18px;
+    color:#7a6a52;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    margin-bottom:10px;
+    padding-left:0.5em;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:96px;
+    line-height:0.92;
+    letter-spacing:0.03em;
+    color:#241f1a;
+    text-shadow:0 1px 0 rgba(255,255,255,0.4);
+  }
+  .divider{ display:flex; align-items:center; gap:16px; margin:22px 0 26px; }
+  .divider .line{ height:1px; width:140px; background:linear-gradient(90deg,#8a785d,transparent); }
+  .divider .dot{ color:#8a785d; font-size:20px; }
+
+  .specs{ margin-bottom:26px; }
+  .specs .badge{
+    display:inline-block; border:1px solid #8a785d; padding:5px 18px;
+    letter-spacing:0.3em; text-transform:uppercase; font-size:14px;
+    color:#6b5c46; margin-bottom:12px; font-family:'Cormorant Garamond',serif;
+  }
+  .specs p{ font-size:22px; line-height:1.5; color:#3c342a; font-family:'Cormorant Garamond',serif; }
+  .specs .avail{
+    display:inline-block; margin-top:12px; letter-spacing:0.28em; font-weight:600;
+    color:#7a2e22; font-size:16px;
+    border-top:1px solid rgba(122,46,34,0.4); border-bottom:1px solid rgba(122,46,34,0.4);
+    padding:5px 0;
+  }
+
+  .body p{ font-size:20.5px; line-height:1.62; color:#332c23; margin-bottom:16px; text-align:justify; }
+  .body em{ font-style:italic; }
+  .highlight{ color:#6b1f16; font-weight:600; font-family:'Cormorant Garamond',serif; }
+  .sign{ text-align:right; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:26px; color:#5f5240; margin-top:20px; }
+</style>
+</head>
+<body>
+  <div id="poster">
+    <!-- PAINTING -->
+    <div class="art-col">
+      <div>
+        <div class="frame">
+          <div class="mat">
+            <img src="/sacro-cuore-art.jpeg" alt="Sacro Cuore" />
+          </div>
+        </div>
+        <div class="plate-wrap">
+          <span class="plate">Sacro Cuore &middot; Li&egrave; Larousse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXT -->
+    <div class="text-col">
+      <div class="kicker">Stampa in tiratura limitata &middot; 7 / 20</div>
+      <h1>SACRO<br/>CUORE</h1>
+      <div class="divider"><span class="line"></span><span class="dot">&#10022;</span></div>
+
+      <div class="specs">
+        <div class="badge">Dettagli dell'opera</div>
+        <p>Carta 100% cotone fatta a mano di Amalfi &middot; peso 300 gr, superficie ruvida<br/>Formato 30 &times; 40 cm &middot; Edizione 7/20</p>
+        <br/><span class="avail">Disponibile</span>
+      </div>
+
+      <div class="body">
+        <p>Il <span class="highlight">Sacro Cuore</span> l'ho associato alla poesia <em>&laquo;Essere ci&ograve; che siamo&raquo;</em>, illustrazione che si trova nella raccolta di poesie <em>Dopo di noi</em> di Li&egrave; Larousse.</p>
+
+        <p>Ho voluto rappresentare il Cuore anatomico perch&eacute; tutto in noi parte da un Amore pi&ugrave; profondo: siamo Amore, Spirito e Intelletto, alimentati dal nostro fuoco interiore &mdash; che ho rappresentato con le fiamme a forma di croce &mdash; e dalla sofferenza, le vene del cuore a forma di spine, quel dolore che ci aiuta a far emergere ci&ograve; che siamo e ci&ograve; per cui abbiamo il diritto di co-creare attraverso il proprio talento: l'emanazione della propria Luce, raffigurata con i raggi che escono dal centro del cuore.</p>
+
+        <p>Il Sacro Cuore &egrave; il simbolo dell'Amore Divino e della Compassione Universale, una fonte di energia spirituale che si manifesta nel cuore dell'essere umano. Questo simbolo va spesso associato alla devozione di Ges&ugrave; Cristo, ma ha un'interpretazione pi&ugrave; ampia e va oltre le pratiche religiose.</p>
+
+        <p>&Egrave; un richiamo alla ricerca interiore, all'apertura del cuore verso gli altri e verso il Divino, alla connessione con la propria Essenza Spirituale. Un invito a coltivare l'amore incondizionato, la Gratitudine e l'accettazione, trascendendo le barriere dell'ego.</p>
+
+        <p>Nella sua simbologia si celano segreti pi&ugrave; profondi che possono guidare l'individuo lungo il cammino spirituale, offrendo una porta verso la comprensione e l'Illuminazione Interiore.</p>
+
+        <div class="sign">&mdash; Li&egrave; Larousse</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

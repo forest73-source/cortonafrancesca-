@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>L'Universo, l'Infinito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#1b1712; }
+  #poster {
+    width:2100px;
+    min-height:1950px;
+    margin:0 auto;
+    background:
+      radial-gradient(ellipse at 70% 25%, rgba(255,251,242,0.92), rgba(240,232,216,0.9)),
+      #ece3d1;
+    position:relative;
+    padding:100px 110px;
+    color:#2a2622;
+    font-family:'EB Garamond', serif;
+    overflow:hidden;
+    display:flex;
+    gap:100px;
+    align-items:center;
+  }
+  #poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    opacity:0.45; pointer-events:none; z-index:0;
+  }
+  #poster::after{
+    content:"";
+    position:absolute; inset:28px;
+    border:1px solid rgba(60,45,30,0.3);
+    pointer-events:none; z-index:1;
+  }
+
+  .art-col{ position:relative; z-index:3; flex:0 0 780px; display:flex; justify-content:center; }
+  .frame{
+    position:relative;
+    padding:34px;
+    background:
+      linear-gradient(135deg,#8a6a3a 0%,#c9a15c 18%,#7c5a2e 40%,#dcb978 60%,#8a6a3a 82%,#6f5227 100%);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.25) inset,
+      0 -2px 0 rgba(0,0,0,0.35) inset,
+      0 40px 80px rgba(30,20,10,0.55),
+      0 15px 30px rgba(30,20,10,0.4);
+    border-radius:3px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute; inset:14px;
+    border:2px solid rgba(60,40,15,0.55);
+    box-shadow:0 0 8px rgba(0,0,0,0.3) inset;
+    pointer-events:none;
+  }
+  .mat{ background:#f6f1e6; padding:38px; box-shadow:0 0 18px rgba(0,0,0,0.35) inset; }
+  .mat img{ display:block; width:100%; box-shadow:0 4px 14px rgba(0,0,0,0.3); }
+  .plate{
+    margin-top:24px; text-align:center;
+    background:linear-gradient(180deg,#d8b876,#a9863f);
+    color:#3a2c12; font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.1em; text-transform:uppercase; font-size:18px; font-weight:600;
+    padding:10px 20px; border:1px solid rgba(60,40,15,0.5);
+    box-shadow:0 3px 8px rgba(0,0,0,0.3); display:inline-block;
+  }
+  .plate-wrap{ text-align:center; }
+
+  .text-col{ position:relative; z-index:3; flex:1; }
+  .kicker{
+    letter-spacing:0.4em; text-transform:uppercase; font-size:17px; color:#7a6a52;
+    font-family:'Cormorant Garamond', serif; font-weight:600; margin-bottom:8px; padding-left:0.4em;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-size:76px;
+    line-height:0.98; letter-spacing:0.01em; color:#241f1a;
+    text-shadow:0 1px 0 rgba(255,255,255,0.4);
+  }
+  .divider{ display:flex; align-items:center; gap:14px; margin:16px 0 20px; }
+  .divider .line{ height:1px; width:120px; background:linear-gradient(90deg,#6a5a86,transparent); }
+  .divider .dot{ color:#6a5a86; font-size:24px; }
+
+  .specs{ margin-bottom:20px; }
+  .specs .badge{
+    display:inline-block; border:1px solid #8a785d; padding:4px 16px;
+    letter-spacing:0.26em; text-transform:uppercase; font-size:13px;
+    color:#6b5c46; margin-bottom:10px; font-family:'Cormorant Garamond',serif;
+  }
+  .specs p{ font-size:22px; line-height:1.5; color:#3c342a; font-family:'Cormorant Garamond',serif; }
+  .specs .avail{
+    display:inline-block; margin-top:10px; letter-spacing:0.24em; font-weight:600;
+    color:#5e4a86; font-size:15px;
+    border-top:1px solid rgba(94,74,134,0.4); border-bottom:1px solid rgba(94,74,134,0.4); padding:4px 0;
+  }
+
+  .body p{ font-size:20px; line-height:1.6; color:#332c23; margin-bottom:16px; text-align:justify; }
+  .body em{ font-style:italic; }
+  .highlight{ color:#5e4a86; font-weight:600; font-family:'Cormorant Garamond',serif; }
+  .sign{ text-align:right; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:26px; color:#5f5240; margin-top:14px; }
+</style>
+</head>
+<body>
+  <div id="poster">
+    <div class="art-col">
+      <div>
+        <div class="frame">
+          <div class="mat">
+            <img src="/universo-art.webp" alt="L'Universo, l'Infinito" />
+          </div>
+        </div>
+        <div class="plate-wrap">
+          <span class="plate">L'Universo, l'Infinito &middot; Li&egrave; Larousse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-col">
+      <div class="kicker">La poesia &middot; Dopo di noi</div>
+      <h1>L'UNIVERSO,<br/>L'INFINITO</h1>
+      <div class="divider"><span class="line"></span><span class="dot">&#10037;</span></div>
+
+      <div class="specs">
+        <div class="badge">Dettagli dell'opera</div>
+        <p>Stampa in tiratura limitata 8/20 &middot; Carta 100% cotone fatta a mano di Amalfi &middot; 300 gr, ruvida &middot; 30 &times; 40 cm</p>
+        <br/><span class="avail">Disponibile</span>
+      </div>
+
+      <div class="body">
+        <p>Ho associato <span class="highlight">l'Universo</span> alla poesia <em>&laquo;Dopo di noi&raquo;</em>, illustrazione presente nella raccolta di poesie intitolata <em>Dopo di noi</em> di Li&egrave; Larousse.</p>
+
+        <p>Ho voluto rappresentare l'Universo perch&eacute; tale grandezza &egrave; dentro di noi: quell'Energia che muta in continuazione, che emana luce e che, se ben allineata con il resto del Creato, riuscirebbe a dar vita alla bellezza che tanto, in ognuno di noi, sente di sapere esistere ed emanare all'esterno.</p>
+
+        <p>Ho ritratto l'Universo, l'insieme di elementi e caratteristiche sempre in movimento e in continua armonia con il tutto, nonostante le diversit&agrave;. Quell'energia che permane invisibile, di cui tutti siamo composti, emanando un dolce suono che ci guida &mdash; se si &egrave; consapevoli e in grado di ascoltarla.</p>
+
+        <div class="sign">&mdash; Li&egrave; Larousse</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

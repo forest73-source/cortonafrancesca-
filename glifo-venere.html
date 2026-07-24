@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Glifo di Venere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#1b1712; }
+  #poster {
+    width:2000px;
+    min-height:1820px;
+    margin:0 auto;
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(255,251,242,0.92), rgba(240,232,216,0.9)),
+      #ece3d1;
+    position:relative;
+    padding:110px 120px;
+    color:#2a2622;
+    font-family:'EB Garamond', serif;
+    overflow:hidden;
+    display:flex;
+    gap:110px;
+    align-items:center;
+  }
+  #poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    opacity:0.45; pointer-events:none; z-index:0;
+  }
+  #poster::after{
+    content:"";
+    position:absolute; inset:30px;
+    border:1px solid rgba(60,45,30,0.3);
+    pointer-events:none; z-index:1;
+  }
+
+  .art-col{ position:relative; z-index:3; flex:0 0 720px; display:flex; justify-content:center; }
+  .frame{
+    position:relative;
+    padding:34px;
+    background:
+      linear-gradient(135deg,#8a6a3a 0%,#c9a15c 18%,#7c5a2e 40%,#dcb978 60%,#8a6a3a 82%,#6f5227 100%);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.25) inset,
+      0 -2px 0 rgba(0,0,0,0.35) inset,
+      0 40px 80px rgba(30,20,10,0.55),
+      0 15px 30px rgba(30,20,10,0.4);
+    border-radius:3px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute; inset:14px;
+    border:2px solid rgba(60,40,15,0.55);
+    box-shadow:0 0 8px rgba(0,0,0,0.3) inset;
+    pointer-events:none;
+  }
+  .mat{
+    background:#f6f1e6;
+    padding:40px;
+    box-shadow:0 0 18px rgba(0,0,0,0.35) inset;
+  }
+  .mat img{ display:block; width:100%; box-shadow:0 4px 14px rgba(0,0,0,0.3); }
+  .plate{
+    margin-top:26px;
+    text-align:center;
+    background:linear-gradient(180deg,#d8b876,#a9863f);
+    color:#3a2c12;
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-size:19px;
+    font-weight:600;
+    padding:10px 22px;
+    border:1px solid rgba(60,40,15,0.5);
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
+    display:inline-block;
+  }
+  .plate-wrap{ text-align:center; }
+
+  .text-col{ position:relative; z-index:3; flex:1; }
+  .kicker{
+    letter-spacing:0.5em;
+    text-transform:uppercase;
+    font-size:18px;
+    color:#7a6a52;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    margin-bottom:10px;
+    padding-left:0.5em;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:88px;
+    line-height:0.94;
+    letter-spacing:0.03em;
+    color:#241f1a;
+    text-shadow:0 1px 0 rgba(255,255,255,0.4);
+  }
+  .divider{ display:flex; align-items:center; gap:16px; margin:20px 0 24px; }
+  .divider .line{ height:1px; width:140px; background:linear-gradient(90deg,#a86a72,transparent); }
+  .divider .dot{ color:#a86a72; font-size:26px; }
+
+  .specs{ margin-bottom:24px; }
+  .specs .badge{
+    display:inline-block; border:1px solid #8a785d; padding:5px 18px;
+    letter-spacing:0.3em; text-transform:uppercase; font-size:14px;
+    color:#6b5c46; margin-bottom:12px; font-family:'Cormorant Garamond',serif;
+  }
+  .specs p{ font-size:22px; line-height:1.5; color:#3c342a; font-family:'Cormorant Garamond',serif; }
+  .specs .avail{
+    display:inline-block; margin-top:12px; letter-spacing:0.28em; font-weight:600;
+    color:#8a2e4a; font-size:16px;
+    border-top:1px solid rgba(138,46,74,0.4); border-bottom:1px solid rgba(138,46,74,0.4);
+    padding:5px 0;
+  }
+
+  .body p{ font-size:20px; line-height:1.58; color:#332c23; margin-bottom:15px; text-align:justify; }
+  .body em{ font-style:italic; }
+  .highlight{ color:#8a2e4a; font-weight:600; font-family:'Cormorant Garamond',serif; }
+  .sign{ text-align:right; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:26px; color:#5f5240; margin-top:16px; }
+</style>
+</head>
+<body>
+  <div id="poster">
+    <div class="art-col">
+      <div>
+        <div class="frame">
+          <div class="mat">
+            <img src="/venere-art.webp" alt="Glifo di Venere" />
+          </div>
+        </div>
+        <div class="plate-wrap">
+          <span class="plate">Glifo di Venere &middot; Li&egrave; Larousse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-col">
+      <div class="kicker">Scegli l'amore &middot; Dopo di noi</div>
+      <h1>GLIFO DI<br/>VENERE</h1>
+      <div class="divider"><span class="line"></span><span class="dot">&#9792;</span></div>
+
+      <div class="specs">
+        <div class="badge">Dettagli dell'opera</div>
+        <p>Stampa in tiratura limitata 2/20<br/>Carta 100% cotone fatta a mano di Amalfi &middot; peso 300 gr, superficie ruvida<br/>Formato 30 &times; 40 cm</p>
+        <br/><span class="avail">Disponibile</span>
+      </div>
+
+      <div class="body">
+        <p>Il <span class="highlight">Glifo di Venere</span> l'ho associato alla poesia <em>&laquo;Scegli l'amore&raquo;</em>, illustrazione che si trova nella raccolta di poesie <em>Dopo di noi</em> di Li&egrave; Larousse.</p>
+
+        <p>Ho rappresentato Venere perch&eacute; &egrave; il pianeta pi&ugrave; dolce e femminile del sistema solare: grazie alle sue energie possiamo far leva verso una comunicazione amorevole con noi stessi e con gli altri e, cos&igrave; facendo, ci accorgeremo che tutto ha motivo di cambiare.</p>
+
+        <p>Il Glifo di Venere rappresenta l'Amore, la bellezza e l'armonia. Simboleggia la capacit&agrave; di amare, di apprezzare la bellezza in tutte le sue forme e di creare legami affettivi. Riflette anche la dualit&agrave; tra Amore e Desiderio.</p>
+
+        <p>Venere &egrave; legata al valore personale e all'autostima: rappresenta l'Essenza delle relazioni interpersonali e l'accettazione di s&eacute;.</p>
+
+        <div class="sign">&mdash; Li&egrave; Larousse</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

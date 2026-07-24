@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Glifo del Sole e della Terra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { background:#1b1712; }
+  #poster {
+    width:2100px;
+    min-height:1980px;
+    margin:0 auto;
+    background:
+      radial-gradient(ellipse at 70% 25%, rgba(255,251,242,0.92), rgba(240,232,216,0.9)),
+      #ece3d1;
+    position:relative;
+    padding:100px 110px;
+    color:#2a2622;
+    font-family:'EB Garamond', serif;
+    overflow:hidden;
+    display:flex;
+    gap:100px;
+    align-items:center;
+  }
+  #poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+    opacity:0.45; pointer-events:none; z-index:0;
+  }
+  #poster::after{
+    content:"";
+    position:absolute; inset:28px;
+    border:1px solid rgba(60,45,30,0.3);
+    pointer-events:none; z-index:1;
+  }
+
+  .art-col{ position:relative; z-index:3; flex:0 0 760px; display:flex; justify-content:center; }
+  .frame{
+    position:relative;
+    padding:34px;
+    background:
+      linear-gradient(135deg,#8a6a3a 0%,#c9a15c 18%,#7c5a2e 40%,#dcb978 60%,#8a6a3a 82%,#6f5227 100%);
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.25) inset,
+      0 -2px 0 rgba(0,0,0,0.35) inset,
+      0 40px 80px rgba(30,20,10,0.55),
+      0 15px 30px rgba(30,20,10,0.4);
+    border-radius:3px;
+  }
+  .frame::before{
+    content:"";
+    position:absolute; inset:14px;
+    border:2px solid rgba(60,40,15,0.55);
+    box-shadow:0 0 8px rgba(0,0,0,0.3) inset;
+    pointer-events:none;
+  }
+  .mat{ background:#f6f1e6; padding:38px; box-shadow:0 0 18px rgba(0,0,0,0.35) inset; }
+  .mat img{ display:block; width:100%; box-shadow:0 4px 14px rgba(0,0,0,0.3); }
+  .plate{
+    margin-top:24px; text-align:center;
+    background:linear-gradient(180deg,#d8b876,#a9863f);
+    color:#3a2c12; font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.1em; text-transform:uppercase; font-size:18px; font-weight:600;
+    padding:10px 20px; border:1px solid rgba(60,40,15,0.5);
+    box-shadow:0 3px 8px rgba(0,0,0,0.3); display:inline-block;
+  }
+  .plate-wrap{ text-align:center; }
+
+  .text-col{ position:relative; z-index:3; flex:1; }
+  .kicker{
+    letter-spacing:0.45em; text-transform:uppercase; font-size:17px; color:#7a6a52;
+    font-family:'Cormorant Garamond', serif; font-weight:600; margin-bottom:8px; padding-left:0.45em;
+  }
+  h1{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-size:74px;
+    line-height:0.96; letter-spacing:0.02em; color:#241f1a;
+    text-shadow:0 1px 0 rgba(255,255,255,0.4);
+  }
+  .divider{ display:flex; align-items:center; gap:14px; margin:16px 0 20px; }
+  .divider .line{ height:1px; width:120px; background:linear-gradient(90deg,#b58a4a,transparent); }
+  .divider .dot{ color:#b58a4a; font-size:24px; }
+
+  .specs{ margin-bottom:20px; }
+  .specs .badge{
+    display:inline-block; border:1px solid #8a785d; padding:4px 16px;
+    letter-spacing:0.28em; text-transform:uppercase; font-size:13px;
+    color:#6b5c46; margin-bottom:10px; font-family:'Cormorant Garamond',serif;
+  }
+  .specs p{ font-size:20px; line-height:1.45; color:#3c342a; font-family:'Cormorant Garamond',serif; }
+  .specs .avail{
+    display:inline-block; margin-top:10px; letter-spacing:0.26em; font-weight:600;
+    color:#9a5a1e; font-size:15px;
+    border-top:1px solid rgba(154,90,30,0.4); border-bottom:1px solid rgba(154,90,30,0.4); padding:4px 0;
+  }
+
+  .body p{ font-size:17.5px; line-height:1.5; color:#332c23; margin-bottom:12px; text-align:justify; }
+  .body em{ font-style:italic; }
+  .body .quote{ text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:23px; color:#9a5a1e; margin:8px 0 14px; letter-spacing:0.02em; }
+  .highlight{ color:#9a5a1e; font-weight:600; font-family:'Cormorant Garamond',serif; }
+  .sign{ text-align:right; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:24px; color:#5f5240; margin-top:12px; }
+</style>
+</head>
+<body>
+  <div id="poster">
+    <div class="art-col">
+      <div>
+        <div class="frame">
+          <div class="mat">
+            <img src="/sole-terra-art.webp" alt="Glifo del Sole e della Terra" />
+          </div>
+        </div>
+        <div class="plate-wrap">
+          <span class="plate">Glifo del Sole e della Terra &middot; Li&egrave; Larousse</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-col">
+      <div class="kicker">Solo il Sole e la Terra possono &middot; Dopo di noi</div>
+      <h1>GLIFO DEL SOLE<br/>E DELLA TERRA</h1>
+      <div class="divider"><span class="line"></span><span class="dot">&#9737;</span><span class="dot">&#9793;</span></div>
+
+      <div class="specs">
+        <div class="badge">Dettagli dell'opera</div>
+        <p>Stampa in tiratura limitata 1/20 &middot; Carta 100% cotone fatta a mano di Amalfi &middot; 300 gr, ruvida &middot; 30 &times; 40 cm</p>
+        <br/><span class="avail">Disponibile</span>
+      </div>
+
+      <div class="body">
+        <p>Il <span class="highlight">Glifo del Sole e della Terra</span> li ho associati alla poesia <em>&laquo;Solo il Sole e la Terra possono&raquo;</em>, illustrazione presente nella raccolta di poesie <em>Dopo di noi</em> di Li&egrave; Larousse.</p>
+
+        <p>Ho voluto raffigurare la Terra al centro come il punto del glifo del Sole, rappresentata da una croce &mdash; il glifo della Terra &mdash; puntinata, quasi invisibile: perch&eacute; l'invisibile &egrave; ovunque, e la croce, oltre allo spirito, rappresenta la stabilit&agrave;.</p>
+
+        <p>Il Sole rappresenta la nostra forza interiore, il nostro ego, il lato maschile che necessita di bilanciarsi e abbracciarsi con il nostro lato femminile: la Terra, al centro di tutto. La loro Unione ed Equilibrio &egrave; la massima manifestazione della Forza della Creazione.</p>
+
+        <p>Il Glifo del Sole simboleggia la vitalit&agrave; e l'espressione del S&eacute; in astrologia, rappresentando l'essenza profonda di una persona e conferendole l'energia per brillare nel mondo. Nel mondo esoterico il Sole &egrave; associato alla mente e all'intelletto, rappresentando il completamento della &laquo;Grande Opera&raquo;: una forza cosmica vitale, fondamentale per la vita.</p>
+
+        <div class="quote">&laquo; Il Sole &egrave; l'immagine del Creatore &raquo; &mdash; Ermetico</div>
+
+        <p>Il Glifo della Terra simboleggia lo spazio e la spiritualit&agrave;. Nella mitologia greca &egrave; personificata dalla Dea Gaia, madre di tutti gli esseri viventi. La Terra incarna vita, fertilit&agrave; e femminilit&agrave;, fungendo da fonte di equilibrio tra gli elementi che la compongono: un'immagine materna che si riflette nell'idea di una Madre Natura che dona generosamente i suoi frutti ai suoi figli.</p>
+
+        <div class="sign">&mdash; Li&egrave; Larousse</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
