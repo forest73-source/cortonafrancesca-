@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cortonafrancesca.pages.dev/sitemap.xml
